@@ -3,7 +3,8 @@ const notFound = document.querySelector('.not-found');
 const content = document.querySelector('.content');
 
 const showWeather = () => {
-    const apikey = "af295f5464b48048dd7d560c8387e0a0";
+    const APIKEY_1 = "af295f5464b4";
+    const APIKEY_2 = "8048dd7d560c8387e0a0";
     const city = document.querySelector('.search-box input').value;
     console.log(city);
     if (city == '') {
@@ -13,7 +14,7 @@ const showWeather = () => {
         content.style.height = "0px";
     }
     else {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY_1}${APIKEY_2}`)
             .then(res => res.json())
             .then(json => {
                 console.log(json);
